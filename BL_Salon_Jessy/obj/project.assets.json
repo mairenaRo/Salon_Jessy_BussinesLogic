@@ -208,19 +208,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ronny Mairena\\.nuget\\packages\\": {}
+    "C:\\Users\\JuniorCorralesMadriz\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ronny Mairena\\Documents\\Informática Empresarial\\Ingeniería\\Proyecto Final\\Lógica de Negocios\\Salon_Jessy_BussinesLogic\\BL_Salon_Jessy\\BL_Salon_Jessy.csproj",
+      "projectUniqueName": "C:\\Users\\JuniorCorralesMadriz\\Documents\\Proyecto Ingen\\Logica de Negocios\\Salon_Jessy_BussinesLogic\\BL_Salon_Jessy\\BL_Salon_Jessy.csproj",
       "projectName": "BL_Salon_Jessy",
-      "projectPath": "C:\\Users\\Ronny Mairena\\Documents\\Informática Empresarial\\Ingeniería\\Proyecto Final\\Lógica de Negocios\\Salon_Jessy_BussinesLogic\\BL_Salon_Jessy\\BL_Salon_Jessy.csproj",
-      "packagesPath": "C:\\Users\\Ronny Mairena\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ronny Mairena\\Documents\\Informática Empresarial\\Ingeniería\\Proyecto Final\\Lógica de Negocios\\Salon_Jessy_BussinesLogic\\BL_Salon_Jessy\\obj\\",
+      "projectPath": "C:\\Users\\JuniorCorralesMadriz\\Documents\\Proyecto Ingen\\Logica de Negocios\\Salon_Jessy_BussinesLogic\\BL_Salon_Jessy\\BL_Salon_Jessy.csproj",
+      "packagesPath": "C:\\Users\\JuniorCorralesMadriz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JuniorCorralesMadriz\\Documents\\Proyecto Ingen\\Logica de Negocios\\Salon_Jessy_BussinesLogic\\BL_Salon_Jessy\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Ronny Mairena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JuniorCorralesMadriz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
