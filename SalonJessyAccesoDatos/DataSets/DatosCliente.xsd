@@ -2,14 +2,17 @@
 <xs:schema id="DatosCliente" targetNamespace="http://tempuri.org/DatosCliente.xsd" xmlns:mstns="http://tempuri.org/DatosCliente.xsd" xmlns="http://tempuri.org/DatosCliente.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection ConnectionStringObject="Data Source=DESKTOP-VPDO8PO\SQLJUNIOR;Initial Catalog=Salon;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-vpdo8po\sqljunior.Salon.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=DESKTOP-VPDO8PO\SQLJUNIOR;Initial Catalog=SalonJessy;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-vpdo8po\sqljunior.SalonJessy.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=DBDSalonJessy.mssql.somee.com;Initial Catalog=DBDSalonJessy;Persist Security Info=True;User ID=JuniorCM99_SQLLogin_1;Password=614egdpslt" IsAppSettingsProperty="false" Modifier="Assembly" Name="vj2100.DBDSalonJessy.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=DBSalonJessy.mssql.somee.com;Initial Catalog=DBSalonJessy;User ID=JuniorCM99_SQLLogin_1;Password=614egdpslt" IsAppSettingsProperty="false" Modifier="Assembly" Name="vj2100.DBSalonJessy.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PersonaTableAdapter" GeneratorDataComponentClassName="PersonaTableAdapter" Name="Persona" UserDataComponentName="PersonaTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Buscar_PersonaTableAdapter" GeneratorDataComponentClassName="Buscar_PersonaTableAdapter" Name="Buscar_Persona" UserDataComponentName="Buscar_PersonaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Buscar_Persona" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetPersona" GetMethodModifier="Public" GetMethodName="GetPersona" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPersona" UserSourceName="GetPersona">
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Buscar_Persona" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetPersona" GetMethodModifier="Public" GetMethodName="GetPersona" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPersona" UserSourceName="GetPersona">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Buscar_Persona</CommandText>
@@ -26,12 +29,11 @@
               <Mapping SourceColumn="PrimerNombre" DataSetColumn="PrimerNombre" />
               <Mapping SourceColumn="PrimerApellido" DataSetColumn="PrimerApellido" />
               <Mapping SourceColumn="SegundoApellido" DataSetColumn="SegundoApellido" />
-              <Mapping SourceColumn="Rol" DataSetColumn="Rol" />
               <Mapping SourceColumn="Correo" DataSetColumn="Correo" />
               <Mapping SourceColumn="Contrasenna" DataSetColumn="Contrasenna" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Agregar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Agregar_Persona" Modifier="Public" Name="Agregar_Persona" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Agregar_Persona">
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Agregar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Agregar_PersonaSQL" Modifier="Public" Name="Agregar_PersonaSQL" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Agregar_PersonaSQL">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Agregar_Persona</CommandText>
@@ -41,14 +43,13 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerNombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@SegundoApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Rol" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Correo" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Contrasenna" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Borrar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Borrar_Cliente" Modifier="Public" Name="Borrar_Cliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Borrar_Cliente">
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Borrar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Borrar_PersonaSQL" Modifier="Public" Name="Borrar_PersonaSQL" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Borrar_PersonaSQL">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Borrar_Persona</CommandText>
@@ -59,18 +60,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Buscar_Persona_Cedula" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDatosCliente" GetMethodModifier="Public" GetMethodName="GetDatosCliente" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDatosCliente" UserSourceName="GetDatosCliente">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.Buscar_Persona_Cedula</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Buscar" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Modificar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Modificar_Persona" Modifier="Public" Name="Modificar_Persona" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Modificar_Persona">
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Modificar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Modificar_PersonaSQL" Modifier="Public" Name="Modificar_PersonaSQL" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Modificar_PersonaSQL">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Modificar_Persona</CommandText>
@@ -80,7 +70,6 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerNombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@SegundoApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Rol" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Correo" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Contrasenna" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -89,9 +78,9 @@
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CitaTableAdapter" GeneratorDataComponentClassName="CitaTableAdapter" Name="Cita" UserDataComponentName="CitaTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Buscar_CitaTableAdapter" GeneratorDataComponentClassName="Buscar_CitaTableAdapter" Name="Buscar_Cita" UserDataComponentName="Buscar_CitaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Buscar_Cita" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetCitaByID" GetMethodModifier="Public" GetMethodName="GetCitaByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetCitaByID" UserSourceName="GetCitaByID">
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Buscar_Cita" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetCitaSQL" GetMethodModifier="Public" GetMethodName="GetCitaSQL" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetCitaSQL" UserSourceName="GetCitaSQL">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Buscar_Cita</CommandText>
@@ -107,12 +96,12 @@
               <Mapping SourceColumn="CitaID" DataSetColumn="CitaID" />
               <Mapping SourceColumn="EstadoID" DataSetColumn="EstadoID" />
               <Mapping SourceColumn="CedulaID" DataSetColumn="CedulaID" />
-              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
-              <Mapping SourceColumn="HoraInicio" DataSetColumn="HoraInicio" />
-              <Mapping SourceColumn="HoraFin" DataSetColumn="HoraFin" />
+              <Mapping SourceColumn="FechaHoraInicio" DataSetColumn="FechaHoraInicio" />
+              <Mapping SourceColumn="FechaHoraFin" DataSetColumn="FechaHoraFin" />
+              <Mapping SourceColumn="DescripcionCita" DataSetColumn="DescripcionCita" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.Salon.dbo" DbObjectName="Salon.dbo.Agregar_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Agregar_Cita" Modifier="Public" Name="Agregar_Cita" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Agregar_Cita">
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Agregar_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Agregar_Cita_SQL" Modifier="Public" Name="Agregar_Cita_SQL" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Agregar_Cita_SQL">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Agregar_Cita</CommandText>
@@ -120,9 +109,165 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@EstadoID" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CedulaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@Fecha" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="time" DbType="Time" Direction="Input" ParameterName="@HoraInicio" Precision="16" ProviderType="Time" Scale="7" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="time" DbType="Time" Direction="Input" ParameterName="@horaFin" Precision="16" ProviderType="Time" Scale="7" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaHoraInicio" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaHoraFin" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Descripcioncita" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Cancelar_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Cancelar_Cita_SQL" Modifier="Public" Name="Cancelar_Cita_SQL" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Cancelar_Cita_SQL">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Cancelar_Cita</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CitaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="desktop-vpdo8po\sqljunior.SalonJessy.dbo" DbObjectName="SalonJessy.dbo.Modificar_Fecha_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Modificar_Fecha_Cita" Modifier="Public" Name="Modificar_Fecha_Cita" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Modificar_Fecha_Cita">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Modificar_Fecha_Cita</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CitaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@horaInicio" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@horaFinalEstimada" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Buscar_Cita_TelefonoTableAdapter" GeneratorDataComponentClassName="Buscar_Cita_TelefonoTableAdapter" Name="Buscar_Cita_Telefono" UserDataComponentName="Buscar_Cita_TelefonoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Buscar_Cita_Telefono" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataCitaTelefono_SQLOnline" GetMethodModifier="Public" GetMethodName="GetDataCitaTelefono_SQLOnline" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataCitaTelefono_SQLOnline" UserSourceName="GetDataCitaTelefono_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Buscar_Cita_Telefono</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Buscar" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CitaID" DataSetColumn="CitaID" />
+              <Mapping SourceColumn="EstadoID" DataSetColumn="EstadoID" />
+              <Mapping SourceColumn="TelefonoID" DataSetColumn="TelefonoID" />
+              <Mapping SourceColumn="FechaHoraInicio" DataSetColumn="FechaHoraInicio" />
+              <Mapping SourceColumn="FechaHoraFin" DataSetColumn="FechaHoraFin" />
+              <Mapping SourceColumn="ServicioID" DataSetColumn="ServicioID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Agregar_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Agregar_Cita_SQLOnline" Modifier="Public" Name="Agregar_Cita_SQLOnline" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Agregar_Cita_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Agregar_Cita</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@EstadoID" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@telefonoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaHoraInicio" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaHoraFin" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ServicioID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Borrar_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Borrar_Cita_SQLOnline" Modifier="Public" Name="Borrar_Cita_SQLOnline" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Borrar_Cita_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Borrar_Cita</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@citaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Modificar_Fecha_Cita" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Modificar_Fecha_Cita_SQLOnline" Modifier="Public" Name="Modificar_Fecha_Cita_SQLOnline" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Modificar_Fecha_Cita_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Modificar_Fecha_Cita</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CitaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@horaInicio" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@horaFinalEstimada" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Buscar_Persona_TelefonoTableAdapter" GeneratorDataComponentClassName="Buscar_Persona_TelefonoTableAdapter" Name="Buscar_Persona_Telefono" UserDataComponentName="Buscar_Persona_TelefonoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Buscar_Persona_Telefono" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPersona_Telefono_SQLOnline" GetMethodModifier="Public" GetMethodName="GetDataPersona_Telefono_SQLOnline" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPersona_Telefono_SQLOnline" UserSourceName="GetDataPersona_Telefono_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Buscar_Persona_Telefono</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Buscar" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TelefonoID" DataSetColumn="TelefonoID" />
+              <Mapping SourceColumn="PrimerNombre" DataSetColumn="PrimerNombre" />
+              <Mapping SourceColumn="PrimerApellido" DataSetColumn="PrimerApellido" />
+              <Mapping SourceColumn="SegundoApellido" DataSetColumn="SegundoApellido" />
+              <Mapping SourceColumn="Correo" DataSetColumn="Correo" />
+              <Mapping SourceColumn="Contrasenna" DataSetColumn="Contrasenna" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Agregar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Agregar_Persona_SQLOnline" Modifier="Public" Name="Agregar_Persona_SQLOnline" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Agregar_Persona_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Agregar_Persona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@telefono" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerNombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@SegundoApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Correo" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Contrasenna" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Borrar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Borrar_Persona_SQLOnline" Modifier="Public" Name="Borrar_Persona_SQLOnline" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Borrar_Persona_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Borrar_Persona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@telefono" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="vj2100.DBSalonJessy.dbo" DbObjectName="DBSalonJessy.dbo.Modificar_Persona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Modificar_Persona_SQLOnline" Modifier="Public" Name="Modificar_Persona_SQLOnline" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Modificar_Persona_SQLOnline">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Modificar_Persona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@telefono" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerNombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PrimerApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@SegundoApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Correo" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Contrasenna" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -137,40 +282,39 @@
   <xs:element name="DatosCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DatosCliente" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosCliente">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Persona" msprop:Generator_RowEvHandlerName="PersonaRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonaRowDeleted" msprop:Generator_RowDeletingName="PersonaRowDeleting" msprop:Generator_RowEvArgName="PersonaRowChangeEvent" msprop:Generator_TablePropName="Persona" msprop:Generator_RowChangedName="PersonaRowChanged" msprop:Generator_UserTableName="Persona" msprop:Generator_RowChangingName="PersonaRowChanging" msprop:Generator_RowClassName="PersonaRow" msprop:Generator_TableClassName="PersonaDataTable" msprop:Generator_TableVarName="tablePersona">
+        <xs:element name="Buscar_Persona" msprop:Generator_RowClassName="Buscar_PersonaRow" msprop:Generator_RowEvHandlerName="Buscar_PersonaRowChangeEventHandler" msprop:Generator_RowDeletedName="Buscar_PersonaRowDeleted" msprop:Generator_RowDeletingName="Buscar_PersonaRowDeleting" msprop:Generator_RowEvArgName="Buscar_PersonaRowChangeEvent" msprop:Generator_TablePropName="Buscar_Persona" msprop:Generator_RowChangedName="Buscar_PersonaRowChanged" msprop:Generator_UserTableName="Buscar_Persona" msprop:Generator_RowChangingName="Buscar_PersonaRowChanging" msprop:Generator_TableClassName="Buscar_PersonaDataTable" msprop:Generator_TableVarName="tableBuscar_Persona">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CedulaID" msprop:Generator_ColumnPropNameInTable="CedulaIDColumn" msprop:Generator_ColumnPropNameInRow="CedulaID" msprop:Generator_UserColumnName="CedulaID" msprop:Generator_ColumnVarNameInTable="columnCedulaID" type="xs:int" />
-              <xs:element name="PrimerNombre" msprop:Generator_ColumnPropNameInTable="PrimerNombreColumn" msprop:Generator_ColumnPropNameInRow="PrimerNombre" msprop:Generator_UserColumnName="PrimerNombre" msprop:Generator_ColumnVarNameInTable="columnPrimerNombre">
+              <xs:element name="CedulaID" msprop:Generator_UserColumnName="CedulaID" msprop:Generator_ColumnPropNameInTable="CedulaIDColumn" msprop:Generator_ColumnPropNameInRow="CedulaID" msprop:Generator_ColumnVarNameInTable="columnCedulaID" type="xs:int" />
+              <xs:element name="PrimerNombre" msprop:Generator_UserColumnName="PrimerNombre" msprop:Generator_ColumnPropNameInTable="PrimerNombreColumn" msprop:Generator_ColumnPropNameInRow="PrimerNombre" msprop:Generator_ColumnVarNameInTable="columnPrimerNombre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PrimerApellido" msprop:Generator_ColumnPropNameInTable="PrimerApellidoColumn" msprop:Generator_ColumnPropNameInRow="PrimerApellido" msprop:Generator_UserColumnName="PrimerApellido" msprop:Generator_ColumnVarNameInTable="columnPrimerApellido">
+              <xs:element name="PrimerApellido" msprop:Generator_UserColumnName="PrimerApellido" msprop:Generator_ColumnPropNameInTable="PrimerApellidoColumn" msprop:Generator_ColumnPropNameInRow="PrimerApellido" msprop:Generator_ColumnVarNameInTable="columnPrimerApellido">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SegundoApellido" msprop:Generator_ColumnPropNameInTable="SegundoApellidoColumn" msprop:Generator_ColumnPropNameInRow="SegundoApellido" msprop:Generator_UserColumnName="SegundoApellido" msprop:Generator_ColumnVarNameInTable="columnSegundoApellido" minOccurs="0">
+              <xs:element name="SegundoApellido" msprop:Generator_UserColumnName="SegundoApellido" msprop:Generator_ColumnPropNameInTable="SegundoApellidoColumn" msprop:Generator_ColumnPropNameInRow="SegundoApellido" msprop:Generator_ColumnVarNameInTable="columnSegundoApellido" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Rol" msprop:Generator_ColumnPropNameInTable="RolColumn" msprop:Generator_ColumnPropNameInRow="Rol" msprop:Generator_UserColumnName="Rol" msprop:Generator_ColumnVarNameInTable="columnRol" type="xs:unsignedByte" />
-              <xs:element name="Correo" msprop:Generator_ColumnPropNameInTable="CorreoColumn" msprop:Generator_ColumnPropNameInRow="Correo" msprop:Generator_UserColumnName="Correo" msprop:Generator_ColumnVarNameInTable="columnCorreo" minOccurs="0">
+              <xs:element name="Correo" msprop:Generator_UserColumnName="Correo" msprop:Generator_ColumnPropNameInTable="CorreoColumn" msprop:Generator_ColumnPropNameInRow="Correo" msprop:Generator_ColumnVarNameInTable="columnCorreo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Contrasenna" msprop:Generator_ColumnPropNameInTable="ContrasennaColumn" msprop:Generator_ColumnPropNameInRow="Contrasenna" msprop:Generator_UserColumnName="Contrasenna" msprop:Generator_ColumnVarNameInTable="columnContrasenna" minOccurs="0">
+              <xs:element name="Contrasenna" msprop:Generator_UserColumnName="Contrasenna" msprop:Generator_ColumnPropNameInTable="ContrasennaColumn" msprop:Generator_ColumnPropNameInRow="Contrasenna" msprop:Generator_ColumnVarNameInTable="columnContrasenna" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -180,27 +324,95 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cita" msprop:Generator_RowEvHandlerName="CitaRowChangeEventHandler" msprop:Generator_RowDeletedName="CitaRowDeleted" msprop:Generator_RowDeletingName="CitaRowDeleting" msprop:Generator_RowEvArgName="CitaRowChangeEvent" msprop:Generator_TablePropName="Cita" msprop:Generator_RowChangedName="CitaRowChanged" msprop:Generator_RowChangingName="CitaRowChanging" msprop:Generator_TableClassName="CitaDataTable" msprop:Generator_RowClassName="CitaRow" msprop:Generator_TableVarName="tableCita" msprop:Generator_UserTableName="Cita">
+        <xs:element name="Buscar_Cita" msprop:Generator_RowClassName="Buscar_CitaRow" msprop:Generator_RowEvHandlerName="Buscar_CitaRowChangeEventHandler" msprop:Generator_RowDeletedName="Buscar_CitaRowDeleted" msprop:Generator_RowDeletingName="Buscar_CitaRowDeleting" msprop:Generator_RowEvArgName="Buscar_CitaRowChangeEvent" msprop:Generator_TablePropName="Buscar_Cita" msprop:Generator_RowChangedName="Buscar_CitaRowChanged" msprop:Generator_UserTableName="Buscar_Cita" msprop:Generator_RowChangingName="Buscar_CitaRowChanging" msprop:Generator_TableClassName="Buscar_CitaDataTable" msprop:Generator_TableVarName="tableBuscar_Cita">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CitaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CitaID" msprop:Generator_ColumnPropNameInTable="CitaIDColumn" msprop:Generator_ColumnPropNameInRow="CitaID" msprop:Generator_ColumnVarNameInTable="columnCitaID" type="xs:int" />
+              <xs:element name="EstadoID" msprop:Generator_UserColumnName="EstadoID" msprop:Generator_ColumnPropNameInTable="EstadoIDColumn" msprop:Generator_ColumnPropNameInRow="EstadoID" msprop:Generator_ColumnVarNameInTable="columnEstadoID" type="xs:unsignedByte" />
+              <xs:element name="CedulaID" msprop:Generator_UserColumnName="CedulaID" msprop:Generator_ColumnPropNameInTable="CedulaIDColumn" msprop:Generator_ColumnPropNameInRow="CedulaID" msprop:Generator_ColumnVarNameInTable="columnCedulaID" type="xs:int" />
+              <xs:element name="FechaHoraInicio" msprop:Generator_UserColumnName="FechaHoraInicio" msprop:Generator_ColumnPropNameInTable="FechaHoraInicioColumn" msprop:Generator_ColumnPropNameInRow="FechaHoraInicio" msprop:Generator_ColumnVarNameInTable="columnFechaHoraInicio" type="xs:dateTime" />
+              <xs:element name="FechaHoraFin" msprop:Generator_UserColumnName="FechaHoraFin" msprop:Generator_ColumnPropNameInTable="FechaHoraFinColumn" msprop:Generator_ColumnPropNameInRow="FechaHoraFin" msprop:Generator_ColumnVarNameInTable="columnFechaHoraFin" type="xs:dateTime" />
+              <xs:element name="DescripcionCita" msprop:Generator_UserColumnName="DescripcionCita" msprop:Generator_ColumnPropNameInTable="DescripcionCitaColumn" msprop:Generator_ColumnPropNameInRow="DescripcionCita" msprop:Generator_ColumnVarNameInTable="columnDescripcionCita">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Buscar_Cita_Telefono" msprop:Generator_RowEvHandlerName="Buscar_Cita_TelefonoRowChangeEventHandler" msprop:Generator_RowDeletedName="Buscar_Cita_TelefonoRowDeleted" msprop:Generator_RowDeletingName="Buscar_Cita_TelefonoRowDeleting" msprop:Generator_RowEvArgName="Buscar_Cita_TelefonoRowChangeEvent" msprop:Generator_TablePropName="Buscar_Cita_Telefono" msprop:Generator_RowChangedName="Buscar_Cita_TelefonoRowChanged" msprop:Generator_RowChangingName="Buscar_Cita_TelefonoRowChanging" msprop:Generator_TableClassName="Buscar_Cita_TelefonoDataTable" msprop:Generator_RowClassName="Buscar_Cita_TelefonoRow" msprop:Generator_TableVarName="tableBuscar_Cita_Telefono" msprop:Generator_UserTableName="Buscar_Cita_Telefono">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CitaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="CitaID" msprop:Generator_ColumnPropNameInTable="CitaIDColumn" msprop:Generator_ColumnVarNameInTable="columnCitaID" msprop:Generator_UserColumnName="CitaID" type="xs:int" />
               <xs:element name="EstadoID" msprop:Generator_ColumnPropNameInRow="EstadoID" msprop:Generator_ColumnPropNameInTable="EstadoIDColumn" msprop:Generator_ColumnVarNameInTable="columnEstadoID" msprop:Generator_UserColumnName="EstadoID" type="xs:unsignedByte" />
-              <xs:element name="CedulaID" msprop:Generator_ColumnPropNameInRow="CedulaID" msprop:Generator_ColumnPropNameInTable="CedulaIDColumn" msprop:Generator_ColumnVarNameInTable="columnCedulaID" msprop:Generator_UserColumnName="CedulaID" type="xs:int" />
-              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
-              <xs:element name="HoraInicio" msprop:Generator_ColumnPropNameInRow="HoraInicio" msprop:Generator_ColumnPropNameInTable="HoraInicioColumn" msprop:Generator_ColumnVarNameInTable="columnHoraInicio" msprop:Generator_UserColumnName="HoraInicio" type="xs:duration" />
-              <xs:element name="HoraFin" msprop:Generator_ColumnPropNameInRow="HoraFin" msprop:Generator_ColumnPropNameInTable="HoraFinColumn" msprop:Generator_ColumnVarNameInTable="columnHoraFin" msprop:Generator_UserColumnName="HoraFin" type="xs:duration" />
+              <xs:element name="TelefonoID" msprop:Generator_ColumnPropNameInRow="TelefonoID" msprop:Generator_ColumnPropNameInTable="TelefonoIDColumn" msprop:Generator_ColumnVarNameInTable="columnTelefonoID" msprop:Generator_UserColumnName="TelefonoID" type="xs:int" />
+              <xs:element name="FechaHoraInicio" msprop:Generator_ColumnPropNameInRow="FechaHoraInicio" msprop:Generator_ColumnPropNameInTable="FechaHoraInicioColumn" msprop:Generator_ColumnVarNameInTable="columnFechaHoraInicio" msprop:Generator_UserColumnName="FechaHoraInicio" type="xs:dateTime" />
+              <xs:element name="FechaHoraFin" msprop:Generator_ColumnPropNameInRow="FechaHoraFin" msprop:Generator_ColumnPropNameInTable="FechaHoraFinColumn" msprop:Generator_ColumnVarNameInTable="columnFechaHoraFin" msprop:Generator_UserColumnName="FechaHoraFin" type="xs:dateTime" />
+              <xs:element name="ServicioID" msprop:Generator_ColumnPropNameInRow="ServicioID" msprop:Generator_ColumnPropNameInTable="ServicioIDColumn" msprop:Generator_ColumnVarNameInTable="columnServicioID" msprop:Generator_UserColumnName="ServicioID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Buscar_Persona_Telefono" msprop:Generator_RowEvHandlerName="Buscar_Persona_TelefonoRowChangeEventHandler" msprop:Generator_RowDeletedName="Buscar_Persona_TelefonoRowDeleted" msprop:Generator_RowDeletingName="Buscar_Persona_TelefonoRowDeleting" msprop:Generator_RowEvArgName="Buscar_Persona_TelefonoRowChangeEvent" msprop:Generator_TablePropName="Buscar_Persona_Telefono" msprop:Generator_RowChangedName="Buscar_Persona_TelefonoRowChanged" msprop:Generator_RowChangingName="Buscar_Persona_TelefonoRowChanging" msprop:Generator_TableClassName="Buscar_Persona_TelefonoDataTable" msprop:Generator_RowClassName="Buscar_Persona_TelefonoRow" msprop:Generator_TableVarName="tableBuscar_Persona_Telefono" msprop:Generator_UserTableName="Buscar_Persona_Telefono">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TelefonoID" msprop:Generator_ColumnPropNameInRow="TelefonoID" msprop:Generator_ColumnPropNameInTable="TelefonoIDColumn" msprop:Generator_ColumnVarNameInTable="columnTelefonoID" msprop:Generator_UserColumnName="TelefonoID" type="xs:int" />
+              <xs:element name="PrimerNombre" msprop:Generator_ColumnPropNameInRow="PrimerNombre" msprop:Generator_ColumnPropNameInTable="PrimerNombreColumn" msprop:Generator_ColumnVarNameInTable="columnPrimerNombre" msprop:Generator_UserColumnName="PrimerNombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrimerApellido" msprop:Generator_ColumnPropNameInRow="PrimerApellido" msprop:Generator_ColumnPropNameInTable="PrimerApellidoColumn" msprop:Generator_ColumnVarNameInTable="columnPrimerApellido" msprop:Generator_UserColumnName="PrimerApellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SegundoApellido" msprop:Generator_ColumnPropNameInRow="SegundoApellido" msprop:Generator_ColumnPropNameInTable="SegundoApellidoColumn" msprop:Generator_ColumnVarNameInTable="columnSegundoApellido" msprop:Generator_UserColumnName="SegundoApellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Correo" msprop:Generator_ColumnPropNameInRow="Correo" msprop:Generator_ColumnPropNameInTable="CorreoColumn" msprop:Generator_ColumnVarNameInTable="columnCorreo" msprop:Generator_UserColumnName="Correo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contrasenna" msprop:Generator_ColumnPropNameInRow="Contrasenna" msprop:Generator_ColumnPropNameInTable="ContrasennaColumn" msprop:Generator_ColumnVarNameInTable="columnContrasenna" msprop:Generator_UserColumnName="Contrasenna" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Persona" />
+      <xs:selector xpath=".//mstns:Buscar_Persona" />
       <xs:field xpath="mstns:CedulaID" />
     </xs:unique>
-    <xs:unique name="Cita_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Cita" />
+    <xs:unique name="Buscar_Cita_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Buscar_Cita" />
       <xs:field xpath="mstns:CitaID" />
+    </xs:unique>
+    <xs:unique name="Buscar_Cita_Telefono_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Buscar_Cita_Telefono" />
+      <xs:field xpath="mstns:CitaID" />
+    </xs:unique>
+    <xs:unique name="Buscar_Persona_Telefono_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Buscar_Persona_Telefono" />
+      <xs:field xpath="mstns:TelefonoID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

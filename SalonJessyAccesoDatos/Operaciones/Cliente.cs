@@ -10,42 +10,47 @@ namespace SalonJessyAccesoDatos.Operaciones
 {
     public class Cliente
     {
-        public void InsertarCliente(int cedula, string nombre, string primerApellido, string segundoApellido)
+        public void InsertarCliente(int telefono, string nombre, string primerApellido, string segundoApellido)
         {
-            var dataset = new DataSets.DatosClienteTableAdapters.PersonaTableAdapter();
+            var dataset = new DataSets.DatosClienteTableAdapters.Buscar_Persona_TelefonoTableAdapter();
 
-            dataset.Agregar_Persona(cedula,nombre,primerApellido,segundoApellido,(byte)1,null, null);
+            dataset.Agregar_Persona_SQLOnline(telefono, nombre,primerApellido,segundoApellido,null, null);
 
         }
 
         public Persona BuscarCliente (int buscar)
         {
-            var dataset = new DataSets.DatosClienteTableAdapters.PersonaTableAdapter();
-            var resultCliente = dataset.GetDatosCliente(buscar);
+            var dataset = new DataSets.DatosClienteTableAdapters.Buscar_Persona_TelefonoTableAdapter();
+            var resultCliente = dataset.GetDataPersona_Telefono_SQLOnline(buscar);
+            
+                Persona persona = new Persona();
+            foreach (DataSets.DatosCliente.Buscar_Persona_TelefonoRow r in resultCliente.Rows)
+            {
+               persona.TelefonoID = r.TelefonoID;
+                persona.Nombre = r.PrimerNombre;
+                persona.PrimerApellido = r.PrimerApellido;
+                persona.SegundoApellido = r.SegundoApellido;
+                persona.Correo = r.Correo;
+                persona.Contrasenna = r.Contrasenna;
+            }
 
-            Persona persona = new Persona();
-
-            //persona.Id = int.Parse(resultCliente.CedulaIDColumn.ColumnName);
-            //persona.Nombre = resultCliente.PrimerNombreColumn.ColumnName;
-            //persona.PrimerApellido = resultCliente.PrimerApellidoColumn.ColumnName;
-            //persona.SegundoApellido = resultCliente.SegundoApellidoColumn.ColumnName;
             return persona; 
         }
         //Modificar para cliente
-        public void ModificarCliente(int cedula, string nombre, string primerApellido, string segundoApellido)
+        public void ModificarCliente(int telefono, string nombre, string primerApellido, string segundoApellido)
         {
-            var dataset = new DataSets.DatosClienteTableAdapters.PersonaTableAdapter();
+            var dataset = new DataSets.DatosClienteTableAdapters.Buscar_Persona_TelefonoTableAdapter();
 
-            dataset.Modificar_Persona(cedula, nombre, primerApellido, segundoApellido, (byte)1, null, null);
+            dataset.Modificar_Persona_SQLOnline(telefono, nombre, primerApellido, segundoApellido, null, null);
 
         }
 
 
-        public void EliminarCliente(int cedula)
+        public void EliminarCliente(int telefono)
         {
-            var dataset = new DataSets.DatosClienteTableAdapters.PersonaTableAdapter();
+            var dataset = new DataSets.DatosClienteTableAdapters.Buscar_Persona_TelefonoTableAdapter();
 
-            dataset.Borrar_Cliente(cedula);
+            dataset.Borrar_Persona_SQLOnline(telefono);
 
         }
     }

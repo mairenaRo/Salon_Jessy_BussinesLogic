@@ -24,9 +24,13 @@ namespace SalonJessyAccesoDatos.DataSets {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DatosCliente : global::System.Data.DataSet {
         
-        private PersonaDataTable tablePersona;
+        private Buscar_PersonaDataTable tableBuscar_Persona;
         
-        private CitaDataTable tableCita;
+        private Buscar_CitaDataTable tableBuscar_Cita;
+        
+        private Buscar_Cita_TelefonoDataTable tableBuscar_Cita_Telefono;
+        
+        private Buscar_Persona_TelefonoDataTable tableBuscar_Persona_Telefono;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +60,17 @@ namespace SalonJessyAccesoDatos.DataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Persona"] != null)) {
-                    base.Tables.Add(new PersonaDataTable(ds.Tables["Persona"]));
+                if ((ds.Tables["Buscar_Persona"] != null)) {
+                    base.Tables.Add(new Buscar_PersonaDataTable(ds.Tables["Buscar_Persona"]));
                 }
-                if ((ds.Tables["Cita"] != null)) {
-                    base.Tables.Add(new CitaDataTable(ds.Tables["Cita"]));
+                if ((ds.Tables["Buscar_Cita"] != null)) {
+                    base.Tables.Add(new Buscar_CitaDataTable(ds.Tables["Buscar_Cita"]));
+                }
+                if ((ds.Tables["Buscar_Cita_Telefono"] != null)) {
+                    base.Tables.Add(new Buscar_Cita_TelefonoDataTable(ds.Tables["Buscar_Cita_Telefono"]));
+                }
+                if ((ds.Tables["Buscar_Persona_Telefono"] != null)) {
+                    base.Tables.Add(new Buscar_Persona_TelefonoDataTable(ds.Tables["Buscar_Persona_Telefono"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +94,9 @@ namespace SalonJessyAccesoDatos.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PersonaDataTable Persona {
+        public Buscar_PersonaDataTable Buscar_Persona {
             get {
-                return this.tablePersona;
+                return this.tableBuscar_Persona;
             }
         }
         
@@ -94,9 +104,29 @@ namespace SalonJessyAccesoDatos.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CitaDataTable Cita {
+        public Buscar_CitaDataTable Buscar_Cita {
             get {
-                return this.tableCita;
+                return this.tableBuscar_Cita;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Buscar_Cita_TelefonoDataTable Buscar_Cita_Telefono {
+            get {
+                return this.tableBuscar_Cita_Telefono;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Buscar_Persona_TelefonoDataTable Buscar_Persona_Telefono {
+            get {
+                return this.tableBuscar_Persona_Telefono;
             }
         }
         
@@ -167,11 +197,17 @@ namespace SalonJessyAccesoDatos.DataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Persona"] != null)) {
-                    base.Tables.Add(new PersonaDataTable(ds.Tables["Persona"]));
+                if ((ds.Tables["Buscar_Persona"] != null)) {
+                    base.Tables.Add(new Buscar_PersonaDataTable(ds.Tables["Buscar_Persona"]));
                 }
-                if ((ds.Tables["Cita"] != null)) {
-                    base.Tables.Add(new CitaDataTable(ds.Tables["Cita"]));
+                if ((ds.Tables["Buscar_Cita"] != null)) {
+                    base.Tables.Add(new Buscar_CitaDataTable(ds.Tables["Buscar_Cita"]));
+                }
+                if ((ds.Tables["Buscar_Cita_Telefono"] != null)) {
+                    base.Tables.Add(new Buscar_Cita_TelefonoDataTable(ds.Tables["Buscar_Cita_Telefono"]));
+                }
+                if ((ds.Tables["Buscar_Persona_Telefono"] != null)) {
+                    base.Tables.Add(new Buscar_Persona_TelefonoDataTable(ds.Tables["Buscar_Persona_Telefono"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +242,28 @@ namespace SalonJessyAccesoDatos.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePersona = ((PersonaDataTable)(base.Tables["Persona"]));
+            this.tableBuscar_Persona = ((Buscar_PersonaDataTable)(base.Tables["Buscar_Persona"]));
             if ((initTable == true)) {
-                if ((this.tablePersona != null)) {
-                    this.tablePersona.InitVars();
+                if ((this.tableBuscar_Persona != null)) {
+                    this.tableBuscar_Persona.InitVars();
                 }
             }
-            this.tableCita = ((CitaDataTable)(base.Tables["Cita"]));
+            this.tableBuscar_Cita = ((Buscar_CitaDataTable)(base.Tables["Buscar_Cita"]));
             if ((initTable == true)) {
-                if ((this.tableCita != null)) {
-                    this.tableCita.InitVars();
+                if ((this.tableBuscar_Cita != null)) {
+                    this.tableBuscar_Cita.InitVars();
+                }
+            }
+            this.tableBuscar_Cita_Telefono = ((Buscar_Cita_TelefonoDataTable)(base.Tables["Buscar_Cita_Telefono"]));
+            if ((initTable == true)) {
+                if ((this.tableBuscar_Cita_Telefono != null)) {
+                    this.tableBuscar_Cita_Telefono.InitVars();
+                }
+            }
+            this.tableBuscar_Persona_Telefono = ((Buscar_Persona_TelefonoDataTable)(base.Tables["Buscar_Persona_Telefono"]));
+            if ((initTable == true)) {
+                if ((this.tableBuscar_Persona_Telefono != null)) {
+                    this.tableBuscar_Persona_Telefono.InitVars();
                 }
             }
         }
@@ -228,21 +276,37 @@ namespace SalonJessyAccesoDatos.DataSets {
             this.Namespace = "http://tempuri.org/DatosCliente.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePersona = new PersonaDataTable();
-            base.Tables.Add(this.tablePersona);
-            this.tableCita = new CitaDataTable();
-            base.Tables.Add(this.tableCita);
+            this.tableBuscar_Persona = new Buscar_PersonaDataTable();
+            base.Tables.Add(this.tableBuscar_Persona);
+            this.tableBuscar_Cita = new Buscar_CitaDataTable();
+            base.Tables.Add(this.tableBuscar_Cita);
+            this.tableBuscar_Cita_Telefono = new Buscar_Cita_TelefonoDataTable();
+            base.Tables.Add(this.tableBuscar_Cita_Telefono);
+            this.tableBuscar_Persona_Telefono = new Buscar_Persona_TelefonoDataTable();
+            base.Tables.Add(this.tableBuscar_Persona_Telefono);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializePersona() {
+        private bool ShouldSerializeBuscar_Persona() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeCita() {
+        private bool ShouldSerializeBuscar_Cita() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeBuscar_Cita_Telefono() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeBuscar_Persona_Telefono() {
             return false;
         }
         
@@ -302,17 +366,23 @@ namespace SalonJessyAccesoDatos.DataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void PersonaRowChangeEventHandler(object sender, PersonaRowChangeEvent e);
+        public delegate void Buscar_PersonaRowChangeEventHandler(object sender, Buscar_PersonaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void CitaRowChangeEventHandler(object sender, CitaRowChangeEvent e);
+        public delegate void Buscar_CitaRowChangeEventHandler(object sender, Buscar_CitaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void Buscar_Cita_TelefonoRowChangeEventHandler(object sender, Buscar_Cita_TelefonoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void Buscar_Persona_TelefonoRowChangeEventHandler(object sender, Buscar_Persona_TelefonoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PersonaDataTable : global::System.Data.TypedTableBase<PersonaRow> {
+        public partial class Buscar_PersonaDataTable : global::System.Data.TypedTableBase<Buscar_PersonaRow> {
             
             private global::System.Data.DataColumn columnCedulaID;
             
@@ -322,16 +392,14 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             private global::System.Data.DataColumn columnSegundoApellido;
             
-            private global::System.Data.DataColumn columnRol;
-            
             private global::System.Data.DataColumn columnCorreo;
             
             private global::System.Data.DataColumn columnContrasenna;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaDataTable() {
-                this.TableName = "Persona";
+            public Buscar_PersonaDataTable() {
+                this.TableName = "Buscar_Persona";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -339,7 +407,7 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PersonaDataTable(global::System.Data.DataTable table) {
+            internal Buscar_PersonaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -356,7 +424,7 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected PersonaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Buscar_PersonaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -395,14 +463,6 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn RolColumn {
-                get {
-                    return this.columnRol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn CorreoColumn {
                 get {
                     return this.columnCorreo;
@@ -428,58 +488,57 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaRow this[int index] {
+            public Buscar_PersonaRow this[int index] {
                 get {
-                    return ((PersonaRow)(this.Rows[index]));
+                    return ((Buscar_PersonaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PersonaRowChangeEventHandler PersonaRowChanging;
+            public event Buscar_PersonaRowChangeEventHandler Buscar_PersonaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PersonaRowChangeEventHandler PersonaRowChanged;
+            public event Buscar_PersonaRowChangeEventHandler Buscar_PersonaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PersonaRowChangeEventHandler PersonaRowDeleting;
+            public event Buscar_PersonaRowChangeEventHandler Buscar_PersonaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PersonaRowChangeEventHandler PersonaRowDeleted;
+            public event Buscar_PersonaRowChangeEventHandler Buscar_PersonaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddPersonaRow(PersonaRow row) {
+            public void AddBuscar_PersonaRow(Buscar_PersonaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaRow AddPersonaRow(int CedulaID, string PrimerNombre, string PrimerApellido, string SegundoApellido, byte Rol, string Correo, string Contrasenna) {
-                PersonaRow rowPersonaRow = ((PersonaRow)(this.NewRow()));
+            public Buscar_PersonaRow AddBuscar_PersonaRow(int CedulaID, string PrimerNombre, string PrimerApellido, string SegundoApellido, string Correo, string Contrasenna) {
+                Buscar_PersonaRow rowBuscar_PersonaRow = ((Buscar_PersonaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CedulaID,
                         PrimerNombre,
                         PrimerApellido,
                         SegundoApellido,
-                        Rol,
                         Correo,
                         Contrasenna};
-                rowPersonaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPersonaRow);
-                return rowPersonaRow;
+                rowBuscar_PersonaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBuscar_PersonaRow);
+                return rowBuscar_PersonaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaRow FindByCedulaID(int CedulaID) {
-                return ((PersonaRow)(this.Rows.Find(new object[] {
+            public Buscar_PersonaRow FindByCedulaID(int CedulaID) {
+                return ((Buscar_PersonaRow)(this.Rows.Find(new object[] {
                             CedulaID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PersonaDataTable cln = ((PersonaDataTable)(base.Clone()));
+                Buscar_PersonaDataTable cln = ((Buscar_PersonaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -487,7 +546,7 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PersonaDataTable();
+                return new Buscar_PersonaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -497,7 +556,6 @@ namespace SalonJessyAccesoDatos.DataSets {
                 this.columnPrimerNombre = base.Columns["PrimerNombre"];
                 this.columnPrimerApellido = base.Columns["PrimerApellido"];
                 this.columnSegundoApellido = base.Columns["SegundoApellido"];
-                this.columnRol = base.Columns["Rol"];
                 this.columnCorreo = base.Columns["Correo"];
                 this.columnContrasenna = base.Columns["Contrasenna"];
             }
@@ -513,8 +571,6 @@ namespace SalonJessyAccesoDatos.DataSets {
                 base.Columns.Add(this.columnPrimerApellido);
                 this.columnSegundoApellido = new global::System.Data.DataColumn("SegundoApellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSegundoApellido);
-                this.columnRol = new global::System.Data.DataColumn("Rol", typeof(byte), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRol);
                 this.columnCorreo = new global::System.Data.DataColumn("Correo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCorreo);
                 this.columnContrasenna = new global::System.Data.DataColumn("Contrasenna", typeof(string), null, global::System.Data.MappingType.Element);
@@ -528,35 +584,34 @@ namespace SalonJessyAccesoDatos.DataSets {
                 this.columnPrimerApellido.AllowDBNull = false;
                 this.columnPrimerApellido.MaxLength = 15;
                 this.columnSegundoApellido.MaxLength = 15;
-                this.columnRol.AllowDBNull = false;
                 this.columnCorreo.MaxLength = 50;
                 this.columnContrasenna.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaRow NewPersonaRow() {
-                return ((PersonaRow)(this.NewRow()));
+            public Buscar_PersonaRow NewBuscar_PersonaRow() {
+                return ((Buscar_PersonaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PersonaRow(builder);
+                return new Buscar_PersonaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PersonaRow);
+                return typeof(Buscar_PersonaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PersonaRowChanged != null)) {
-                    this.PersonaRowChanged(this, new PersonaRowChangeEvent(((PersonaRow)(e.Row)), e.Action));
+                if ((this.Buscar_PersonaRowChanged != null)) {
+                    this.Buscar_PersonaRowChanged(this, new Buscar_PersonaRowChangeEvent(((Buscar_PersonaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -564,8 +619,8 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PersonaRowChanging != null)) {
-                    this.PersonaRowChanging(this, new PersonaRowChangeEvent(((PersonaRow)(e.Row)), e.Action));
+                if ((this.Buscar_PersonaRowChanging != null)) {
+                    this.Buscar_PersonaRowChanging(this, new Buscar_PersonaRowChangeEvent(((Buscar_PersonaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -573,8 +628,8 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PersonaRowDeleted != null)) {
-                    this.PersonaRowDeleted(this, new PersonaRowChangeEvent(((PersonaRow)(e.Row)), e.Action));
+                if ((this.Buscar_PersonaRowDeleted != null)) {
+                    this.Buscar_PersonaRowDeleted(this, new Buscar_PersonaRowChangeEvent(((Buscar_PersonaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -582,14 +637,14 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PersonaRowDeleting != null)) {
-                    this.PersonaRowDeleting(this, new PersonaRowChangeEvent(((PersonaRow)(e.Row)), e.Action));
+                if ((this.Buscar_PersonaRowDeleting != null)) {
+                    this.Buscar_PersonaRowDeleting(this, new Buscar_PersonaRowChangeEvent(((Buscar_PersonaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovePersonaRow(PersonaRow row) {
+            public void RemoveBuscar_PersonaRow(Buscar_PersonaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -616,7 +671,7 @@ namespace SalonJessyAccesoDatos.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PersonaDataTable";
+                attribute2.FixedValue = "Buscar_PersonaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -662,7 +717,7 @@ namespace SalonJessyAccesoDatos.DataSets {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CitaDataTable : global::System.Data.TypedTableBase<CitaRow> {
+        public partial class Buscar_CitaDataTable : global::System.Data.TypedTableBase<Buscar_CitaRow> {
             
             private global::System.Data.DataColumn columnCitaID;
             
@@ -670,16 +725,16 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             private global::System.Data.DataColumn columnCedulaID;
             
-            private global::System.Data.DataColumn columnFecha;
+            private global::System.Data.DataColumn columnFechaHoraInicio;
             
-            private global::System.Data.DataColumn columnHoraInicio;
+            private global::System.Data.DataColumn columnFechaHoraFin;
             
-            private global::System.Data.DataColumn columnHoraFin;
+            private global::System.Data.DataColumn columnDescripcionCita;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaDataTable() {
-                this.TableName = "Cita";
+            public Buscar_CitaDataTable() {
+                this.TableName = "Buscar_Cita";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -687,7 +742,7 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal CitaDataTable(global::System.Data.DataTable table) {
+            internal Buscar_CitaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -704,7 +759,7 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected CitaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Buscar_CitaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -735,25 +790,25 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FechaColumn {
+            public global::System.Data.DataColumn FechaHoraInicioColumn {
                 get {
-                    return this.columnFecha;
+                    return this.columnFechaHoraInicio;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HoraInicioColumn {
+            public global::System.Data.DataColumn FechaHoraFinColumn {
                 get {
-                    return this.columnHoraInicio;
+                    return this.columnFechaHoraFin;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HoraFinColumn {
+            public global::System.Data.DataColumn DescripcionCitaColumn {
                 get {
-                    return this.columnHoraFin;
+                    return this.columnDescripcionCita;
                 }
             }
             
@@ -768,57 +823,57 @@ namespace SalonJessyAccesoDatos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaRow this[int index] {
+            public Buscar_CitaRow this[int index] {
                 get {
-                    return ((CitaRow)(this.Rows[index]));
+                    return ((Buscar_CitaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CitaRowChangeEventHandler CitaRowChanging;
+            public event Buscar_CitaRowChangeEventHandler Buscar_CitaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CitaRowChangeEventHandler CitaRowChanged;
+            public event Buscar_CitaRowChangeEventHandler Buscar_CitaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CitaRowChangeEventHandler CitaRowDeleting;
+            public event Buscar_CitaRowChangeEventHandler Buscar_CitaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CitaRowChangeEventHandler CitaRowDeleted;
+            public event Buscar_CitaRowChangeEventHandler Buscar_CitaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddCitaRow(CitaRow row) {
+            public void AddBuscar_CitaRow(Buscar_CitaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaRow AddCitaRow(byte EstadoID, int CedulaID, System.DateTime Fecha, System.TimeSpan HoraInicio, System.TimeSpan HoraFin) {
-                CitaRow rowCitaRow = ((CitaRow)(this.NewRow()));
+            public Buscar_CitaRow AddBuscar_CitaRow(byte EstadoID, int CedulaID, System.DateTime FechaHoraInicio, System.DateTime FechaHoraFin, string DescripcionCita) {
+                Buscar_CitaRow rowBuscar_CitaRow = ((Buscar_CitaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         EstadoID,
                         CedulaID,
-                        Fecha,
-                        HoraInicio,
-                        HoraFin};
-                rowCitaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCitaRow);
-                return rowCitaRow;
+                        FechaHoraInicio,
+                        FechaHoraFin,
+                        DescripcionCita};
+                rowBuscar_CitaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBuscar_CitaRow);
+                return rowBuscar_CitaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaRow FindByCitaID(int CitaID) {
-                return ((CitaRow)(this.Rows.Find(new object[] {
+            public Buscar_CitaRow FindByCitaID(int CitaID) {
+                return ((Buscar_CitaRow)(this.Rows.Find(new object[] {
                             CitaID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CitaDataTable cln = ((CitaDataTable)(base.Clone()));
+                Buscar_CitaDataTable cln = ((Buscar_CitaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -826,7 +881,7 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CitaDataTable();
+                return new Buscar_CitaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -835,9 +890,9 @@ namespace SalonJessyAccesoDatos.DataSets {
                 this.columnCitaID = base.Columns["CitaID"];
                 this.columnEstadoID = base.Columns["EstadoID"];
                 this.columnCedulaID = base.Columns["CedulaID"];
-                this.columnFecha = base.Columns["Fecha"];
-                this.columnHoraInicio = base.Columns["HoraInicio"];
-                this.columnHoraFin = base.Columns["HoraFin"];
+                this.columnFechaHoraInicio = base.Columns["FechaHoraInicio"];
+                this.columnFechaHoraFin = base.Columns["FechaHoraFin"];
+                this.columnDescripcionCita = base.Columns["DescripcionCita"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,12 +904,12 @@ namespace SalonJessyAccesoDatos.DataSets {
                 base.Columns.Add(this.columnEstadoID);
                 this.columnCedulaID = new global::System.Data.DataColumn("CedulaID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCedulaID);
-                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha);
-                this.columnHoraInicio = new global::System.Data.DataColumn("HoraInicio", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHoraInicio);
-                this.columnHoraFin = new global::System.Data.DataColumn("HoraFin", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHoraFin);
+                this.columnFechaHoraInicio = new global::System.Data.DataColumn("FechaHoraInicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaHoraInicio);
+                this.columnFechaHoraFin = new global::System.Data.DataColumn("FechaHoraFin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaHoraFin);
+                this.columnDescripcionCita = new global::System.Data.DataColumn("DescripcionCita", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionCita);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCitaID}, true));
                 this.columnCitaID.AutoIncrement = true;
@@ -865,35 +920,36 @@ namespace SalonJessyAccesoDatos.DataSets {
                 this.columnCitaID.Unique = true;
                 this.columnEstadoID.AllowDBNull = false;
                 this.columnCedulaID.AllowDBNull = false;
-                this.columnFecha.AllowDBNull = false;
-                this.columnHoraInicio.AllowDBNull = false;
-                this.columnHoraFin.AllowDBNull = false;
+                this.columnFechaHoraInicio.AllowDBNull = false;
+                this.columnFechaHoraFin.AllowDBNull = false;
+                this.columnDescripcionCita.AllowDBNull = false;
+                this.columnDescripcionCita.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaRow NewCitaRow() {
-                return ((CitaRow)(this.NewRow()));
+            public Buscar_CitaRow NewBuscar_CitaRow() {
+                return ((Buscar_CitaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CitaRow(builder);
+                return new Buscar_CitaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CitaRow);
+                return typeof(Buscar_CitaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CitaRowChanged != null)) {
-                    this.CitaRowChanged(this, new CitaRowChangeEvent(((CitaRow)(e.Row)), e.Action));
+                if ((this.Buscar_CitaRowChanged != null)) {
+                    this.Buscar_CitaRowChanged(this, new Buscar_CitaRowChangeEvent(((Buscar_CitaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -901,8 +957,8 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CitaRowChanging != null)) {
-                    this.CitaRowChanging(this, new CitaRowChangeEvent(((CitaRow)(e.Row)), e.Action));
+                if ((this.Buscar_CitaRowChanging != null)) {
+                    this.Buscar_CitaRowChanging(this, new Buscar_CitaRowChangeEvent(((Buscar_CitaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -910,8 +966,8 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CitaRowDeleted != null)) {
-                    this.CitaRowDeleted(this, new CitaRowChangeEvent(((CitaRow)(e.Row)), e.Action));
+                if ((this.Buscar_CitaRowDeleted != null)) {
+                    this.Buscar_CitaRowDeleted(this, new Buscar_CitaRowChangeEvent(((Buscar_CitaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -919,14 +975,14 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CitaRowDeleting != null)) {
-                    this.CitaRowDeleting(this, new CitaRowChangeEvent(((CitaRow)(e.Row)), e.Action));
+                if ((this.Buscar_CitaRowDeleting != null)) {
+                    this.Buscar_CitaRowDeleting(this, new Buscar_CitaRowChangeEvent(((Buscar_CitaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveCitaRow(CitaRow row) {
+            public void RemoveBuscar_CitaRow(Buscar_CitaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -953,7 +1009,679 @@ namespace SalonJessyAccesoDatos.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CitaDataTable";
+                attribute2.FixedValue = "Buscar_CitaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Buscar_Cita_TelefonoDataTable : global::System.Data.TypedTableBase<Buscar_Cita_TelefonoRow> {
+            
+            private global::System.Data.DataColumn columnCitaID;
+            
+            private global::System.Data.DataColumn columnEstadoID;
+            
+            private global::System.Data.DataColumn columnTelefonoID;
+            
+            private global::System.Data.DataColumn columnFechaHoraInicio;
+            
+            private global::System.Data.DataColumn columnFechaHoraFin;
+            
+            private global::System.Data.DataColumn columnServicioID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoDataTable() {
+                this.TableName = "Buscar_Cita_Telefono";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Buscar_Cita_TelefonoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Buscar_Cita_TelefonoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CitaIDColumn {
+                get {
+                    return this.columnCitaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoIDColumn {
+                get {
+                    return this.columnEstadoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TelefonoIDColumn {
+                get {
+                    return this.columnTelefonoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaHoraInicioColumn {
+                get {
+                    return this.columnFechaHoraInicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaHoraFinColumn {
+                get {
+                    return this.columnFechaHoraFin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ServicioIDColumn {
+                get {
+                    return this.columnServicioID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoRow this[int index] {
+                get {
+                    return ((Buscar_Cita_TelefonoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Cita_TelefonoRowChangeEventHandler Buscar_Cita_TelefonoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Cita_TelefonoRowChangeEventHandler Buscar_Cita_TelefonoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Cita_TelefonoRowChangeEventHandler Buscar_Cita_TelefonoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Cita_TelefonoRowChangeEventHandler Buscar_Cita_TelefonoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddBuscar_Cita_TelefonoRow(Buscar_Cita_TelefonoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoRow AddBuscar_Cita_TelefonoRow(byte EstadoID, int TelefonoID, System.DateTime FechaHoraInicio, System.DateTime FechaHoraFin, int ServicioID) {
+                Buscar_Cita_TelefonoRow rowBuscar_Cita_TelefonoRow = ((Buscar_Cita_TelefonoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        EstadoID,
+                        TelefonoID,
+                        FechaHoraInicio,
+                        FechaHoraFin,
+                        ServicioID};
+                rowBuscar_Cita_TelefonoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBuscar_Cita_TelefonoRow);
+                return rowBuscar_Cita_TelefonoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoRow FindByCitaID(int CitaID) {
+                return ((Buscar_Cita_TelefonoRow)(this.Rows.Find(new object[] {
+                            CitaID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Buscar_Cita_TelefonoDataTable cln = ((Buscar_Cita_TelefonoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Buscar_Cita_TelefonoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnCitaID = base.Columns["CitaID"];
+                this.columnEstadoID = base.Columns["EstadoID"];
+                this.columnTelefonoID = base.Columns["TelefonoID"];
+                this.columnFechaHoraInicio = base.Columns["FechaHoraInicio"];
+                this.columnFechaHoraFin = base.Columns["FechaHoraFin"];
+                this.columnServicioID = base.Columns["ServicioID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnCitaID = new global::System.Data.DataColumn("CitaID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCitaID);
+                this.columnEstadoID = new global::System.Data.DataColumn("EstadoID", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoID);
+                this.columnTelefonoID = new global::System.Data.DataColumn("TelefonoID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefonoID);
+                this.columnFechaHoraInicio = new global::System.Data.DataColumn("FechaHoraInicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaHoraInicio);
+                this.columnFechaHoraFin = new global::System.Data.DataColumn("FechaHoraFin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaHoraFin);
+                this.columnServicioID = new global::System.Data.DataColumn("ServicioID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnServicioID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCitaID}, true));
+                this.columnCitaID.AutoIncrement = true;
+                this.columnCitaID.AutoIncrementSeed = -1;
+                this.columnCitaID.AutoIncrementStep = -1;
+                this.columnCitaID.AllowDBNull = false;
+                this.columnCitaID.ReadOnly = true;
+                this.columnCitaID.Unique = true;
+                this.columnEstadoID.AllowDBNull = false;
+                this.columnTelefonoID.AllowDBNull = false;
+                this.columnFechaHoraInicio.AllowDBNull = false;
+                this.columnFechaHoraFin.AllowDBNull = false;
+                this.columnServicioID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoRow NewBuscar_Cita_TelefonoRow() {
+                return ((Buscar_Cita_TelefonoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Buscar_Cita_TelefonoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Buscar_Cita_TelefonoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Buscar_Cita_TelefonoRowChanged != null)) {
+                    this.Buscar_Cita_TelefonoRowChanged(this, new Buscar_Cita_TelefonoRowChangeEvent(((Buscar_Cita_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Buscar_Cita_TelefonoRowChanging != null)) {
+                    this.Buscar_Cita_TelefonoRowChanging(this, new Buscar_Cita_TelefonoRowChangeEvent(((Buscar_Cita_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Buscar_Cita_TelefonoRowDeleted != null)) {
+                    this.Buscar_Cita_TelefonoRowDeleted(this, new Buscar_Cita_TelefonoRowChangeEvent(((Buscar_Cita_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Buscar_Cita_TelefonoRowDeleting != null)) {
+                    this.Buscar_Cita_TelefonoRowDeleting(this, new Buscar_Cita_TelefonoRowChangeEvent(((Buscar_Cita_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveBuscar_Cita_TelefonoRow(Buscar_Cita_TelefonoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatosCliente ds = new DatosCliente();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Buscar_Cita_TelefonoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Buscar_Persona_TelefonoDataTable : global::System.Data.TypedTableBase<Buscar_Persona_TelefonoRow> {
+            
+            private global::System.Data.DataColumn columnTelefonoID;
+            
+            private global::System.Data.DataColumn columnPrimerNombre;
+            
+            private global::System.Data.DataColumn columnPrimerApellido;
+            
+            private global::System.Data.DataColumn columnSegundoApellido;
+            
+            private global::System.Data.DataColumn columnCorreo;
+            
+            private global::System.Data.DataColumn columnContrasenna;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoDataTable() {
+                this.TableName = "Buscar_Persona_Telefono";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Buscar_Persona_TelefonoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Buscar_Persona_TelefonoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TelefonoIDColumn {
+                get {
+                    return this.columnTelefonoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrimerNombreColumn {
+                get {
+                    return this.columnPrimerNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrimerApellidoColumn {
+                get {
+                    return this.columnPrimerApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SegundoApellidoColumn {
+                get {
+                    return this.columnSegundoApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CorreoColumn {
+                get {
+                    return this.columnCorreo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ContrasennaColumn {
+                get {
+                    return this.columnContrasenna;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoRow this[int index] {
+                get {
+                    return ((Buscar_Persona_TelefonoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Persona_TelefonoRowChangeEventHandler Buscar_Persona_TelefonoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Persona_TelefonoRowChangeEventHandler Buscar_Persona_TelefonoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Persona_TelefonoRowChangeEventHandler Buscar_Persona_TelefonoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Buscar_Persona_TelefonoRowChangeEventHandler Buscar_Persona_TelefonoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddBuscar_Persona_TelefonoRow(Buscar_Persona_TelefonoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoRow AddBuscar_Persona_TelefonoRow(int TelefonoID, string PrimerNombre, string PrimerApellido, string SegundoApellido, string Correo, string Contrasenna) {
+                Buscar_Persona_TelefonoRow rowBuscar_Persona_TelefonoRow = ((Buscar_Persona_TelefonoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        TelefonoID,
+                        PrimerNombre,
+                        PrimerApellido,
+                        SegundoApellido,
+                        Correo,
+                        Contrasenna};
+                rowBuscar_Persona_TelefonoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBuscar_Persona_TelefonoRow);
+                return rowBuscar_Persona_TelefonoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoRow FindByTelefonoID(int TelefonoID) {
+                return ((Buscar_Persona_TelefonoRow)(this.Rows.Find(new object[] {
+                            TelefonoID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Buscar_Persona_TelefonoDataTable cln = ((Buscar_Persona_TelefonoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Buscar_Persona_TelefonoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnTelefonoID = base.Columns["TelefonoID"];
+                this.columnPrimerNombre = base.Columns["PrimerNombre"];
+                this.columnPrimerApellido = base.Columns["PrimerApellido"];
+                this.columnSegundoApellido = base.Columns["SegundoApellido"];
+                this.columnCorreo = base.Columns["Correo"];
+                this.columnContrasenna = base.Columns["Contrasenna"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnTelefonoID = new global::System.Data.DataColumn("TelefonoID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefonoID);
+                this.columnPrimerNombre = new global::System.Data.DataColumn("PrimerNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrimerNombre);
+                this.columnPrimerApellido = new global::System.Data.DataColumn("PrimerApellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrimerApellido);
+                this.columnSegundoApellido = new global::System.Data.DataColumn("SegundoApellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSegundoApellido);
+                this.columnCorreo = new global::System.Data.DataColumn("Correo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorreo);
+                this.columnContrasenna = new global::System.Data.DataColumn("Contrasenna", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContrasenna);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnTelefonoID}, true));
+                this.columnTelefonoID.AllowDBNull = false;
+                this.columnTelefonoID.Unique = true;
+                this.columnPrimerNombre.AllowDBNull = false;
+                this.columnPrimerNombre.MaxLength = 15;
+                this.columnPrimerApellido.AllowDBNull = false;
+                this.columnPrimerApellido.MaxLength = 15;
+                this.columnSegundoApellido.MaxLength = 15;
+                this.columnCorreo.MaxLength = 50;
+                this.columnContrasenna.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoRow NewBuscar_Persona_TelefonoRow() {
+                return ((Buscar_Persona_TelefonoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Buscar_Persona_TelefonoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Buscar_Persona_TelefonoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Buscar_Persona_TelefonoRowChanged != null)) {
+                    this.Buscar_Persona_TelefonoRowChanged(this, new Buscar_Persona_TelefonoRowChangeEvent(((Buscar_Persona_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Buscar_Persona_TelefonoRowChanging != null)) {
+                    this.Buscar_Persona_TelefonoRowChanging(this, new Buscar_Persona_TelefonoRowChangeEvent(((Buscar_Persona_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Buscar_Persona_TelefonoRowDeleted != null)) {
+                    this.Buscar_Persona_TelefonoRowDeleted(this, new Buscar_Persona_TelefonoRowChangeEvent(((Buscar_Persona_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Buscar_Persona_TelefonoRowDeleting != null)) {
+                    this.Buscar_Persona_TelefonoRowDeleting(this, new Buscar_Persona_TelefonoRowChangeEvent(((Buscar_Persona_TelefonoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveBuscar_Persona_TelefonoRow(Buscar_Persona_TelefonoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatosCliente ds = new DatosCliente();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Buscar_Persona_TelefonoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -997,25 +1725,25 @@ namespace SalonJessyAccesoDatos.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PersonaRow : global::System.Data.DataRow {
+        public partial class Buscar_PersonaRow : global::System.Data.DataRow {
             
-            private PersonaDataTable tablePersona;
+            private Buscar_PersonaDataTable tableBuscar_Persona;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PersonaRow(global::System.Data.DataRowBuilder rb) : 
+            internal Buscar_PersonaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePersona = ((PersonaDataTable)(this.Table));
+                this.tableBuscar_Persona = ((Buscar_PersonaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int CedulaID {
                 get {
-                    return ((int)(this[this.tablePersona.CedulaIDColumn]));
+                    return ((int)(this[this.tableBuscar_Persona.CedulaIDColumn]));
                 }
                 set {
-                    this[this.tablePersona.CedulaIDColumn] = value;
+                    this[this.tableBuscar_Persona.CedulaIDColumn] = value;
                 }
             }
             
@@ -1023,10 +1751,10 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string PrimerNombre {
                 get {
-                    return ((string)(this[this.tablePersona.PrimerNombreColumn]));
+                    return ((string)(this[this.tableBuscar_Persona.PrimerNombreColumn]));
                 }
                 set {
-                    this[this.tablePersona.PrimerNombreColumn] = value;
+                    this[this.tableBuscar_Persona.PrimerNombreColumn] = value;
                 }
             }
             
@@ -1034,10 +1762,10 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string PrimerApellido {
                 get {
-                    return ((string)(this[this.tablePersona.PrimerApellidoColumn]));
+                    return ((string)(this[this.tableBuscar_Persona.PrimerApellidoColumn]));
                 }
                 set {
-                    this[this.tablePersona.PrimerApellidoColumn] = value;
+                    this[this.tableBuscar_Persona.PrimerApellidoColumn] = value;
                 }
             }
             
@@ -1046,25 +1774,14 @@ namespace SalonJessyAccesoDatos.DataSets {
             public string SegundoApellido {
                 get {
                     try {
-                        return ((string)(this[this.tablePersona.SegundoApellidoColumn]));
+                        return ((string)(this[this.tableBuscar_Persona.SegundoApellidoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SegundoApellido\' in table \'Persona\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SegundoApellido\' in table \'Buscar_Persona\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePersona.SegundoApellidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte Rol {
-                get {
-                    return ((byte)(this[this.tablePersona.RolColumn]));
-                }
-                set {
-                    this[this.tablePersona.RolColumn] = value;
+                    this[this.tableBuscar_Persona.SegundoApellidoColumn] = value;
                 }
             }
             
@@ -1073,14 +1790,14 @@ namespace SalonJessyAccesoDatos.DataSets {
             public string Correo {
                 get {
                     try {
-                        return ((string)(this[this.tablePersona.CorreoColumn]));
+                        return ((string)(this[this.tableBuscar_Persona.CorreoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Correo\' in table \'Persona\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Correo\' in table \'Buscar_Persona\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePersona.CorreoColumn] = value;
+                    this[this.tableBuscar_Persona.CorreoColumn] = value;
                 }
             }
             
@@ -1089,76 +1806,76 @@ namespace SalonJessyAccesoDatos.DataSets {
             public string Contrasenna {
                 get {
                     try {
-                        return ((string)(this[this.tablePersona.ContrasennaColumn]));
+                        return ((string)(this[this.tableBuscar_Persona.ContrasennaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Contrasenna\' in table \'Persona\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contrasenna\' in table \'Buscar_Persona\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePersona.ContrasennaColumn] = value;
+                    this[this.tableBuscar_Persona.ContrasennaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSegundoApellidoNull() {
-                return this.IsNull(this.tablePersona.SegundoApellidoColumn);
+                return this.IsNull(this.tableBuscar_Persona.SegundoApellidoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSegundoApellidoNull() {
-                this[this.tablePersona.SegundoApellidoColumn] = global::System.Convert.DBNull;
+                this[this.tableBuscar_Persona.SegundoApellidoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCorreoNull() {
-                return this.IsNull(this.tablePersona.CorreoColumn);
+                return this.IsNull(this.tableBuscar_Persona.CorreoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCorreoNull() {
-                this[this.tablePersona.CorreoColumn] = global::System.Convert.DBNull;
+                this[this.tableBuscar_Persona.CorreoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsContrasennaNull() {
-                return this.IsNull(this.tablePersona.ContrasennaColumn);
+                return this.IsNull(this.tableBuscar_Persona.ContrasennaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetContrasennaNull() {
-                this[this.tablePersona.ContrasennaColumn] = global::System.Convert.DBNull;
+                this[this.tableBuscar_Persona.ContrasennaColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CitaRow : global::System.Data.DataRow {
+        public partial class Buscar_CitaRow : global::System.Data.DataRow {
             
-            private CitaDataTable tableCita;
+            private Buscar_CitaDataTable tableBuscar_Cita;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal CitaRow(global::System.Data.DataRowBuilder rb) : 
+            internal Buscar_CitaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCita = ((CitaDataTable)(this.Table));
+                this.tableBuscar_Cita = ((Buscar_CitaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int CitaID {
                 get {
-                    return ((int)(this[this.tableCita.CitaIDColumn]));
+                    return ((int)(this[this.tableBuscar_Cita.CitaIDColumn]));
                 }
                 set {
-                    this[this.tableCita.CitaIDColumn] = value;
+                    this[this.tableBuscar_Cita.CitaIDColumn] = value;
                 }
             }
             
@@ -1166,10 +1883,10 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public byte EstadoID {
                 get {
-                    return ((byte)(this[this.tableCita.EstadoIDColumn]));
+                    return ((byte)(this[this.tableBuscar_Cita.EstadoIDColumn]));
                 }
                 set {
-                    this[this.tableCita.EstadoIDColumn] = value;
+                    this[this.tableBuscar_Cita.EstadoIDColumn] = value;
                 }
             }
             
@@ -1177,44 +1894,258 @@ namespace SalonJessyAccesoDatos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int CedulaID {
                 get {
-                    return ((int)(this[this.tableCita.CedulaIDColumn]));
+                    return ((int)(this[this.tableBuscar_Cita.CedulaIDColumn]));
                 }
                 set {
-                    this[this.tableCita.CedulaIDColumn] = value;
+                    this[this.tableBuscar_Cita.CedulaIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Fecha {
+            public System.DateTime FechaHoraInicio {
                 get {
-                    return ((global::System.DateTime)(this[this.tableCita.FechaColumn]));
+                    return ((global::System.DateTime)(this[this.tableBuscar_Cita.FechaHoraInicioColumn]));
                 }
                 set {
-                    this[this.tableCita.FechaColumn] = value;
+                    this[this.tableBuscar_Cita.FechaHoraInicioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.TimeSpan HoraInicio {
+            public System.DateTime FechaHoraFin {
                 get {
-                    return ((global::System.TimeSpan)(this[this.tableCita.HoraInicioColumn]));
+                    return ((global::System.DateTime)(this[this.tableBuscar_Cita.FechaHoraFinColumn]));
                 }
                 set {
-                    this[this.tableCita.HoraInicioColumn] = value;
+                    this[this.tableBuscar_Cita.FechaHoraFinColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.TimeSpan HoraFin {
+            public string DescripcionCita {
                 get {
-                    return ((global::System.TimeSpan)(this[this.tableCita.HoraFinColumn]));
+                    return ((string)(this[this.tableBuscar_Cita.DescripcionCitaColumn]));
                 }
                 set {
-                    this[this.tableCita.HoraFinColumn] = value;
+                    this[this.tableBuscar_Cita.DescripcionCitaColumn] = value;
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Buscar_Cita_TelefonoRow : global::System.Data.DataRow {
+            
+            private Buscar_Cita_TelefonoDataTable tableBuscar_Cita_Telefono;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Buscar_Cita_TelefonoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBuscar_Cita_Telefono = ((Buscar_Cita_TelefonoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int CitaID {
+                get {
+                    return ((int)(this[this.tableBuscar_Cita_Telefono.CitaIDColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Cita_Telefono.CitaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte EstadoID {
+                get {
+                    return ((byte)(this[this.tableBuscar_Cita_Telefono.EstadoIDColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Cita_Telefono.EstadoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TelefonoID {
+                get {
+                    return ((int)(this[this.tableBuscar_Cita_Telefono.TelefonoIDColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Cita_Telefono.TelefonoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime FechaHoraInicio {
+                get {
+                    return ((global::System.DateTime)(this[this.tableBuscar_Cita_Telefono.FechaHoraInicioColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Cita_Telefono.FechaHoraInicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime FechaHoraFin {
+                get {
+                    return ((global::System.DateTime)(this[this.tableBuscar_Cita_Telefono.FechaHoraFinColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Cita_Telefono.FechaHoraFinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ServicioID {
+                get {
+                    return ((int)(this[this.tableBuscar_Cita_Telefono.ServicioIDColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Cita_Telefono.ServicioIDColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Buscar_Persona_TelefonoRow : global::System.Data.DataRow {
+            
+            private Buscar_Persona_TelefonoDataTable tableBuscar_Persona_Telefono;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Buscar_Persona_TelefonoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBuscar_Persona_Telefono = ((Buscar_Persona_TelefonoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TelefonoID {
+                get {
+                    return ((int)(this[this.tableBuscar_Persona_Telefono.TelefonoIDColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Persona_Telefono.TelefonoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrimerNombre {
+                get {
+                    return ((string)(this[this.tableBuscar_Persona_Telefono.PrimerNombreColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Persona_Telefono.PrimerNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrimerApellido {
+                get {
+                    return ((string)(this[this.tableBuscar_Persona_Telefono.PrimerApellidoColumn]));
+                }
+                set {
+                    this[this.tableBuscar_Persona_Telefono.PrimerApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SegundoApellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableBuscar_Persona_Telefono.SegundoApellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SegundoApellido\' in table \'Buscar_Persona_Telefono\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableBuscar_Persona_Telefono.SegundoApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Correo {
+                get {
+                    try {
+                        return ((string)(this[this.tableBuscar_Persona_Telefono.CorreoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Correo\' in table \'Buscar_Persona_Telefono\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBuscar_Persona_Telefono.CorreoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Contrasenna {
+                get {
+                    try {
+                        return ((string)(this[this.tableBuscar_Persona_Telefono.ContrasennaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contrasenna\' in table \'Buscar_Persona_Telefono\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBuscar_Persona_Telefono.ContrasennaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSegundoApellidoNull() {
+                return this.IsNull(this.tableBuscar_Persona_Telefono.SegundoApellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSegundoApellidoNull() {
+                this[this.tableBuscar_Persona_Telefono.SegundoApellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCorreoNull() {
+                return this.IsNull(this.tableBuscar_Persona_Telefono.CorreoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCorreoNull() {
+                this[this.tableBuscar_Persona_Telefono.CorreoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsContrasennaNull() {
+                return this.IsNull(this.tableBuscar_Persona_Telefono.ContrasennaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetContrasennaNull() {
+                this[this.tableBuscar_Persona_Telefono.ContrasennaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1222,22 +2153,22 @@ namespace SalonJessyAccesoDatos.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class PersonaRowChangeEvent : global::System.EventArgs {
+        public class Buscar_PersonaRowChangeEvent : global::System.EventArgs {
             
-            private PersonaRow eventRow;
+            private Buscar_PersonaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaRowChangeEvent(PersonaRow row, global::System.Data.DataRowAction action) {
+            public Buscar_PersonaRowChangeEvent(Buscar_PersonaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonaRow Row {
+            public Buscar_PersonaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1256,22 +2187,90 @@ namespace SalonJessyAccesoDatos.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class CitaRowChangeEvent : global::System.EventArgs {
+        public class Buscar_CitaRowChangeEvent : global::System.EventArgs {
             
-            private CitaRow eventRow;
+            private Buscar_CitaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaRowChangeEvent(CitaRow row, global::System.Data.DataRowAction action) {
+            public Buscar_CitaRowChangeEvent(Buscar_CitaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CitaRow Row {
+            public Buscar_CitaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class Buscar_Cita_TelefonoRowChangeEvent : global::System.EventArgs {
+            
+            private Buscar_Cita_TelefonoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoRowChangeEvent(Buscar_Cita_TelefonoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Cita_TelefonoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class Buscar_Persona_TelefonoRowChangeEvent : global::System.EventArgs {
+            
+            private Buscar_Persona_TelefonoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoRowChangeEvent(Buscar_Persona_TelefonoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buscar_Persona_TelefonoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1299,7 +2298,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PersonaTableAdapter : global::System.ComponentModel.Component {
+    public partial class Buscar_PersonaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1313,7 +2312,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public PersonaTableAdapter() {
+        public Buscar_PersonaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1410,12 +2409,11 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Persona";
+            tableMapping.DataSetTable = "Buscar_Persona";
             tableMapping.ColumnMappings.Add("CedulaID", "CedulaID");
             tableMapping.ColumnMappings.Add("PrimerNombre", "PrimerNombre");
             tableMapping.ColumnMappings.Add("PrimerApellido", "PrimerApellido");
             tableMapping.ColumnMappings.Add("SegundoApellido", "SegundoApellido");
-            tableMapping.ColumnMappings.Add("Rol", "Rol");
             tableMapping.ColumnMappings.Add("Correo", "Correo");
             tableMapping.ColumnMappings.Add("Contrasenna", "Contrasenna");
             this._adapter.TableMappings.Add(tableMapping);
@@ -1425,14 +2423,14 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-VPDO8PO\\SQLJUNIOR;Initial Catalog=Salon;Integrated Security=T" +
-                "rue";
+            this._connection.ConnectionString = "Data Source=DESKTOP-VPDO8PO\\SQLJUNIOR;Initial Catalog=SalonJessy;Integrated Secur" +
+                "ity=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.Buscar_Persona";
@@ -1448,7 +2446,6 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerNombre", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SegundoApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rol", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 3, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contrasenna", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -1459,29 +2456,22 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "dbo.Buscar_Persona_Cedula";
+            this._commandCollection[3].CommandText = "dbo.Modificar_Persona";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Buscar", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "dbo.Modificar_Persona";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerNombre", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SegundoApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rol", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 3, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contrasenna", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerNombre", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SegundoApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contrasenna", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatosCliente.PersonaDataTable GetPersona(string Buscar) {
+        public virtual DatosCliente.Buscar_PersonaDataTable GetPersona(string Buscar) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Buscar == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1489,7 +2479,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Buscar));
             }
-            DatosCliente.PersonaDataTable dataTable = new DatosCliente.PersonaDataTable();
+            DatosCliente.Buscar_PersonaDataTable dataTable = new DatosCliente.Buscar_PersonaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1497,24 +2487,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DatosCliente.PersonaDataTable GetDatosCliente(global::System.Nullable<int> Buscar) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((Buscar.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Buscar.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            DatosCliente.PersonaDataTable dataTable = new DatosCliente.PersonaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Agregar_Persona(global::System.Nullable<int> Cedula, string PrimerNombre, string PrimerApellido, string SegundoApellido, global::System.Nullable<byte> Rol, string Correo, string Contrasenna) {
+        public virtual int Agregar_PersonaSQL(global::System.Nullable<int> Cedula, string PrimerNombre, string PrimerApellido, string SegundoApellido, string Correo, string Contrasenna) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((Cedula.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(Cedula.Value));
@@ -1540,23 +2513,17 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             else {
                 command.Parameters[4].Value = ((string)(SegundoApellido));
             }
-            if ((Rol.HasValue == true)) {
-                command.Parameters[5].Value = ((byte)(Rol.Value));
-            }
-            else {
+            if ((Correo == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Correo == null)) {
+            else {
+                command.Parameters[5].Value = ((string)(Correo));
+            }
+            if ((Contrasenna == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[6].Value = ((string)(Correo));
-            }
-            if ((Contrasenna == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(Contrasenna));
+                command.Parameters[6].Value = ((string)(Contrasenna));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1578,7 +2545,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Borrar_Cliente(global::System.Nullable<int> cedula) {
+        public virtual int Borrar_PersonaSQL(global::System.Nullable<int> cedula) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((cedula.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(cedula.Value));
@@ -1606,8 +2573,8 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Modificar_Persona(global::System.Nullable<int> Cedula, string PrimerNombre, string PrimerApellido, string SegundoApellido, global::System.Nullable<byte> Rol, string Correo, string Contrasenna) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+        public virtual int Modificar_PersonaSQL(global::System.Nullable<int> Cedula, string PrimerNombre, string PrimerApellido, string SegundoApellido, string Correo, string Contrasenna) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((Cedula.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(Cedula.Value));
             }
@@ -1632,23 +2599,17 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             else {
                 command.Parameters[4].Value = ((string)(SegundoApellido));
             }
-            if ((Rol.HasValue == true)) {
-                command.Parameters[5].Value = ((byte)(Rol.Value));
-            }
-            else {
+            if ((Correo == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Correo == null)) {
+            else {
+                command.Parameters[5].Value = ((string)(Correo));
+            }
+            if ((Contrasenna == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[6].Value = ((string)(Correo));
-            }
-            if ((Contrasenna == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(Contrasenna));
+                command.Parameters[6].Value = ((string)(Contrasenna));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1677,7 +2638,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CitaTableAdapter : global::System.ComponentModel.Component {
+    public partial class Buscar_CitaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1691,7 +2652,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public CitaTableAdapter() {
+        public Buscar_CitaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1788,13 +2749,13 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Cita";
+            tableMapping.DataSetTable = "Buscar_Cita";
             tableMapping.ColumnMappings.Add("CitaID", "CitaID");
             tableMapping.ColumnMappings.Add("EstadoID", "EstadoID");
             tableMapping.ColumnMappings.Add("CedulaID", "CedulaID");
-            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
-            tableMapping.ColumnMappings.Add("HoraInicio", "HoraInicio");
-            tableMapping.ColumnMappings.Add("HoraFin", "HoraFin");
+            tableMapping.ColumnMappings.Add("FechaHoraInicio", "FechaHoraInicio");
+            tableMapping.ColumnMappings.Add("FechaHoraFin", "FechaHoraFin");
+            tableMapping.ColumnMappings.Add("DescripcionCita", "DescripcionCita");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1802,14 +2763,14 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-VPDO8PO\\SQLJUNIOR;Initial Catalog=Salon;Integrated Security=T" +
-                "rue";
+            this._connection.ConnectionString = "Data Source=DESKTOP-VPDO8PO\\SQLJUNIOR;Initial Catalog=SalonJessy;Integrated Secur" +
+                "ity=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.Buscar_Cita";
@@ -1823,16 +2784,30 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoID", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 3, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CedulaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HoraInicio", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 16, 7, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaFin", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 16, 7, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaHoraInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaHoraFin", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcioncita", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.Cancelar_Cita";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.Modificar_Fecha_Cita";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaFinalEstimada", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatosCliente.CitaDataTable GetCitaByID(string Buscar) {
+        public virtual DatosCliente.Buscar_CitaDataTable GetCitaSQL(string Buscar) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Buscar == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1840,7 +2815,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Buscar));
             }
-            DatosCliente.CitaDataTable dataTable = new DatosCliente.CitaDataTable();
+            DatosCliente.Buscar_CitaDataTable dataTable = new DatosCliente.Buscar_CitaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1848,7 +2823,7 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Agregar_Cita(global::System.Nullable<byte> EstadoID, global::System.Nullable<int> CedulaID, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<global::System.TimeSpan> HoraInicio, global::System.Nullable<global::System.TimeSpan> horaFin) {
+        public virtual int Agregar_Cita_SQL(global::System.Nullable<byte> EstadoID, global::System.Nullable<int> CedulaID, global::System.Nullable<global::System.DateTime> FechaHoraInicio, global::System.Nullable<global::System.DateTime> FechaHoraFin, string Descripcioncita) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((EstadoID.HasValue == true)) {
                 command.Parameters[1].Value = ((byte)(EstadoID.Value));
@@ -1862,23 +2837,743 @@ namespace SalonJessyAccesoDatos.DataSets.DatosClienteTableAdapters {
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Fecha.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(Fecha.Value));
+            if ((FechaHoraInicio.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(FechaHoraInicio.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((HoraInicio.HasValue == true)) {
-                command.Parameters[4].Value = ((System.TimeSpan)(HoraInicio.Value));
+            if ((FechaHoraFin.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(FechaHoraFin.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((horaFin.HasValue == true)) {
-                command.Parameters[5].Value = ((System.TimeSpan)(horaFin.Value));
+            if ((Descripcioncita == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Descripcioncita));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Cancelar_Cita_SQL(global::System.Nullable<int> CitaID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((CitaID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(CitaID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Modificar_Fecha_Cita(global::System.Nullable<int> CitaID, global::System.Nullable<global::System.DateTime> horaInicio, global::System.Nullable<global::System.DateTime> horaFinalEstimada) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((CitaID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(CitaID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((horaInicio.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(horaInicio.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((horaFinalEstimada.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(horaFinalEstimada.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Buscar_Cita_TelefonoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Buscar_Cita_TelefonoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Buscar_Cita_Telefono";
+            tableMapping.ColumnMappings.Add("CitaID", "CitaID");
+            tableMapping.ColumnMappings.Add("EstadoID", "EstadoID");
+            tableMapping.ColumnMappings.Add("TelefonoID", "TelefonoID");
+            tableMapping.ColumnMappings.Add("FechaHoraInicio", "FechaHoraInicio");
+            tableMapping.ColumnMappings.Add("FechaHoraFin", "FechaHoraFin");
+            tableMapping.ColumnMappings.Add("ServicioID", "ServicioID");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=DBSalonJessy.mssql.somee.com;Initial Catalog=DBSalonJessy;User ID=Jun" +
+                "iorCM99_SQLLogin_1;Password=614egdpslt";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Buscar_Cita_Telefono";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Buscar", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.Agregar_Cita";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoID", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 3, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefonoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaHoraInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaHoraFin", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.Borrar_Cita";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@citaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.Modificar_Fecha_Cita";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaFinalEstimada", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DatosCliente.Buscar_Cita_TelefonoDataTable GetDataCitaTelefono_SQLOnline(global::System.Nullable<int> Buscar) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Buscar.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Buscar.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DatosCliente.Buscar_Cita_TelefonoDataTable dataTable = new DatosCliente.Buscar_Cita_TelefonoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Agregar_Cita_SQLOnline(global::System.Nullable<byte> EstadoID, global::System.Nullable<int> telefonoID, global::System.Nullable<global::System.DateTime> FechaHoraInicio, global::System.Nullable<global::System.DateTime> FechaHoraFin, global::System.Nullable<int> ServicioID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((EstadoID.HasValue == true)) {
+                command.Parameters[1].Value = ((byte)(EstadoID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((telefonoID.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(telefonoID.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((FechaHoraInicio.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(FechaHoraInicio.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((FechaHoraFin.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(FechaHoraFin.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((ServicioID.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(ServicioID.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Borrar_Cita_SQLOnline(global::System.Nullable<int> citaID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((citaID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(citaID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Modificar_Fecha_Cita_SQLOnline(global::System.Nullable<int> CitaID, global::System.Nullable<global::System.DateTime> horaInicio, global::System.Nullable<global::System.DateTime> horaFinalEstimada) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((CitaID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(CitaID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((horaInicio.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(horaInicio.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((horaFinalEstimada.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(horaFinalEstimada.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Buscar_Persona_TelefonoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Buscar_Persona_TelefonoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Buscar_Persona_Telefono";
+            tableMapping.ColumnMappings.Add("TelefonoID", "TelefonoID");
+            tableMapping.ColumnMappings.Add("PrimerNombre", "PrimerNombre");
+            tableMapping.ColumnMappings.Add("PrimerApellido", "PrimerApellido");
+            tableMapping.ColumnMappings.Add("SegundoApellido", "SegundoApellido");
+            tableMapping.ColumnMappings.Add("Correo", "Correo");
+            tableMapping.ColumnMappings.Add("Contrasenna", "Contrasenna");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=DBSalonJessy.mssql.somee.com;Initial Catalog=DBSalonJessy;User ID=Jun" +
+                "iorCM99_SQLLogin_1;Password=614egdpslt";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Buscar_Persona_Telefono";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Buscar", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.Agregar_Persona";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerNombre", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SegundoApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contrasenna", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.Borrar_Persona";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.Modificar_Persona";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerNombre", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrimerApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SegundoApellido", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contrasenna", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DatosCliente.Buscar_Persona_TelefonoDataTable GetDataPersona_Telefono_SQLOnline(global::System.Nullable<int> Buscar) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Buscar.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Buscar.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DatosCliente.Buscar_Persona_TelefonoDataTable dataTable = new DatosCliente.Buscar_Persona_TelefonoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Agregar_Persona_SQLOnline(global::System.Nullable<int> telefono, string PrimerNombre, string PrimerApellido, string SegundoApellido, string Correo, string Contrasenna) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((telefono.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(telefono.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((PrimerNombre == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(PrimerNombre));
+            }
+            if ((PrimerApellido == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(PrimerApellido));
+            }
+            if ((SegundoApellido == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(SegundoApellido));
+            }
+            if ((Correo == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Correo));
+            }
+            if ((Contrasenna == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Contrasenna));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Borrar_Persona_SQLOnline(global::System.Nullable<int> telefono) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((telefono.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(telefono.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Modificar_Persona_SQLOnline(global::System.Nullable<int> telefono, string PrimerNombre, string PrimerApellido, string SegundoApellido, string Correo, string Contrasenna) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((telefono.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(telefono.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((PrimerNombre == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(PrimerNombre));
+            }
+            if ((PrimerApellido == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(PrimerApellido));
+            }
+            if ((SegundoApellido == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(SegundoApellido));
+            }
+            if ((Correo == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Correo));
+            }
+            if ((Contrasenna == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Contrasenna));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

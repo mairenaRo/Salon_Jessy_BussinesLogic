@@ -10,10 +10,20 @@ namespace SalonJessyAccesoDatos.Models
     {
         public int CitaId { get; set; }
         public int EstadoId { get; set; }
-        public int CedulaId { get; set; }
-        public DateTime Fecha { get; set; }
-        public TimeSpan HoraInicio { get; set; }
-        public TimeSpan HoraFin { get; set; }
+        public int telefonoId { get; set; }
+        public DateTime FechaHoraInicio { get; set; }
+        public DateTime FechaHoraFin { get; set; }
+
+        public Citas() { }
+
+        public Citas(int ? citaID, int estadoID, int telefono, DateTime fechaInicio, DateTime fechaFin) {
+
+            this.CitaId = CitaId;
+            this.EstadoId = estadoID;
+            this.telefonoId = telefono; 
+            this.FechaHoraInicio = fechaInicio;
+            this.FechaHoraFin = fechaFin;
         }
     }
+}
 

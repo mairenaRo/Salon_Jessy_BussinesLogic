@@ -9,11 +9,14 @@ namespace SalonJessy.Controllers
     public class PersonaController : Controller
     {
         [HttpGet(Name = "GetPersona")]
-        public List<Persona> Get()
+        public Persona Get(int telefono)
         {
-            List<Persona> list = new List<Persona>();
+            Persona persona = new Persona();
+            Cliente cliente = new Cliente();
 
-            return list;
+            persona = cliente.BuscarCliente(telefono);
+            
+            return persona;
         }
 
         [HttpPost]
